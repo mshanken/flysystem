@@ -18,10 +18,8 @@ class Util
     {
         $pathinfo = compact('path');
 
-        if ('' !== $dirname = dirname($path)) {
-            $pathinfo['dirname'] = static::normalizeDirname($dirname);
-        }
-
+        $dirname = dirname($path);
+        $pathinfo['dirname'] = static::normalizeDirname($dirname);
         $pathinfo['basename'] = static::basename($path);
 
         $pathinfo += pathinfo($pathinfo['basename']);
